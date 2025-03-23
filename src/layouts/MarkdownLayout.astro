@@ -4,9 +4,20 @@ import Layout from './Layout.astro';
 import Prose from '../components/Prose.astro';
 
 const { frontmatter } = Astro.props;
+const {
+  title,
+  description,
+  image = import.meta.env.BASE_URL + "PianoFitness.png",
+  type = "article"
+} = frontmatter;
 ---
 
-<Layout title={frontmatter.title}>
+<Layout 
+  title={title}
+  description={description}
+  image={image}
+  type={type}
+>
   <div class="container mx-auto px-4 py-8 md:py-16 max-w-4xl">
     <div class="mb-8">
       <h1 class="text-3xl md:text-4xl font-bold mb-2">{frontmatter.title}</h1>

@@ -12,7 +12,7 @@ Welcome to Piano Fitness. We respect your privacy and are committed to protectin
 
 Piano Fitness is designed as a technical development tool for piano students, providing interactive exercises and practice tools. Our fundamental principle is to collect only the minimum information necessary to provide and improve our services, in alignment with the data minimization principle of the General Data Protection Regulation (GDPR).
 
-Piano Fitness is operated by [Your Company Name], a company registered in Finland and subject to European Union data protection regulations. As such, we are committed to complying with the GDPR and other applicable data protection laws.
+Piano Fitness is operated by Piano Fitness, a company registered in Finland and subject to European Union data protection regulations. As such, we are committed to complying with the GDPR and other applicable data protection laws.
 
 ## Information We Collect
 

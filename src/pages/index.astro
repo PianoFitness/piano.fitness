@@ -1,0 +1,303 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const gitHubUrl = 'https://github.com/brylie/piano-fitness-app';
+const gitHubIssuesUrl = `${gitHubUrl}/issues`;
+const gitHubLicenseUrl = `${gitHubUrl}/blob/main/LICENSE`;
+const baseUrl = import.meta.env.BASE_URL || "/";
+
+const title = "Piano Fitness - Technical Development for Piano Students";
+const description = "Enhance your piano technique with interactive exercises and real-time feedback. Piano Fitness complements traditional piano lessons with focused technical development tools.";
+---
+
+<Layout
+  title={title}
+  description={description}
+>
+  <!-- Hero Section -->
+  <section class="hero bg-base-200 py-16 md:py-24">
+    <div class="container mx-auto px-4 text-center">
+	<img src={baseUrl + "PianoFitness.png"} alt="Piano Fitness Logo" class="w-32 h-32 mx-auto mb-6 rounded-[20%] shadow-lg" />
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Develop Your Piano Technique with Interactive Guidance</h1>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">Piano Fitness complements your piano lessons with focused exercises and real-time feedback</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href={baseUrl + "#features"} class="btn btn-primary">Explore Features</a>
+        <a href={gitHubUrl} class="btn btn-outline">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Why Piano Fitness?</h2>
+        <p class="text-lg max-w-2xl mx-auto">Our application focuses on technical development that enhances your learning experience</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+          <div class="card-body items-center text-center">
+            <div class="text-4xl mb-4">🎹</div>
+            <h3 class="card-title text-xl mb-2">Interactive Interface</h3>
+            <p>Full 88-key visualization with MIDI support and real-time feedback for an immersive practice experience.</p>
+          </div>
+        </div>
+        
+        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+          <div class="card-body items-center text-center">
+            <div class="text-4xl mb-4">📚</div>
+            <h3 class="card-title text-xl mb-2">Comprehensive Exercises</h3>
+            <p>Structured progression through scales, arpeggios, chord inversions, and diatonic sequences.</p>
+          </div>
+        </div>
+        
+        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+          <div class="card-body items-center text-center">
+            <div class="text-4xl mb-4">⏱️</div>
+            <h3 class="card-title text-xl mb-2">Focused Practice</h3>
+            <p>Built-in metronome and visual finger numbering help develop proper technique and timing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem-Solution Section -->
+  <section id="why-piano-fitness" class="py-16 bg-base-200">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">How We Complement Your Piano Journey</h2>
+        <p class="text-lg max-w-2xl mx-auto">Piano Fitness fills important gaps in the piano learning process</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h3 class="card-title text-xl">Interactive Practice</h3>
+            <p class="font-medium">Problem:</p>
+            <p class="mb-4">Traditional sheet music piano exercises aren't interactive.</p>
+            <p class="font-medium">Solution:</p>
+            <p>Our product waits for student input via MIDI, providing immediate feedback and guided corrections.</p>
+          </div>
+        </div>
+        
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h3 class="card-title text-xl">Visual Learning</h3>
+            <p class="font-medium">Problem:</p>
+            <p class="mb-4">Sheet music may be too abstract or difficult to read for some students.</p>
+            <p class="font-medium">Solution:</p>
+            <p>Our product shows an overview of the piano, so students don't need to do any mental mapping of abstract musical notation to the keys.</p>
+          </div>
+        </div>
+        
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h3 class="card-title text-xl">Technical Focus</h3>
+            <p class="font-medium">Problem:</p>
+            <p class="mb-4">Many apps focus on repertoire but neglect technical development.</p>
+            <p class="font-medium">Solution:</p>
+            <p>Piano Fitness specializes in technical exercises that build the foundation for playing any piece.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Help Section -->
+  <section id="how-we-help" class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Available Features</h2>
+        <p class="text-lg max-w-2xl mx-auto">Explore the current capabilities of Piano Fitness</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h3 class="card-title text-xl mb-4 justify-center">Exercise Library</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-success mr-2">•</span>
+                <span>Major and Natural Minor scales</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-success mr-2">•</span>
+                <span>Diatonic arpeggios (1-2 octaves)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-success mr-2">•</span>
+                <span>Chord inversions and triads</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-success mr-2">•</span>
+                <span>Progressive technical exercises</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h3 class="card-title text-xl mb-4 justify-center">Practice Tools</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-success mr-2">•</span>
+                <span>Interactive 88-key interface</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-success mr-2">•</span>
+                <span>MIDI keyboard support (required)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-success mr-2">•</span>
+                <span>Built-in metronome</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-success mr-2">•</span>
+                <span>Visual finger numbering guidance</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h3 class="card-title text-xl mb-4 justify-center">Coming Soon</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">⏲️</span>
+                <span>Practice session timer and analytics</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">📚</span>
+                <span>Extended exercise library</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">📊</span>
+                <span>Progress tracking dashboard</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">🔄</span>
+                <span>Custom practice routines</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Status Section -->
+  <section id="status" class="py-16 bg-base-200">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Current Status</h2>
+        <p class="text-lg max-w-2xl mx-auto">Piano Fitness is actively being developed with regular updates</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h3 class="card-title text-xl mb-4">Developer Preview</h3>
+            <p class="mb-4">Piano Fitness is currently in active development, with regular releases adding new features and improvements. While not yet available in app stores, you can:</p>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">📦</span>
+                <span>Download source code from GitHub</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">💭</span>
+                <span>Provide feedback through issues</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">💻</span>
+                <span>Contribute to development through pull requests</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h3 class="card-title text-xl mb-4">Technical Requirements</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span>MIDI keyboard</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span>Mobile device running iOS 14.0+ or Android 8.0+</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span>MIDI connectivity support (USB, Bluetooth, or USB OTG)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary mr-2">•</span>
+                <span>OpenGL ES 3.0 support</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-primary text-primary-content">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Join the Piano Fitness Development</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">Be part of shaping the future of piano technical training by exploring the project on GitHub.</p>
+      <a href={gitHubUrl} class="btn btn-accent text-gray hover:btn-accent-focus">View Project on GitHub</a>
+    </div>
+  </section>
+
+  <!-- Back to top button -->
+  <button
+    id="back-to-top"
+    class="fixed bottom-4 right-4 btn btn-circle btn-primary"
+    aria-label="Back to top"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M5 10l7-7m0 0l7 7m-7-7v18"
+      />
+    </svg>
+  </button>
+</Layout>
+
+<script>
+  const backToTopButton = document.getElementById('back-to-top');
+  
+  // Show/hide button based on scroll position
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopButton?.classList.remove('hidden');
+    } else {
+      backToTopButton?.classList.add('hidden');
+    }
+  });
+
+  // Scroll to top when clicked
+  backToTopButton?.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  // Initially hide the button
+  backToTopButton?.classList.add('hidden');
+</script>

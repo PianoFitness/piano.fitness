@@ -21,9 +21,35 @@ export default {
           sans: ['Open Sans', 'sans-serif'],
           heading: ['Montserrat', 'sans-serif'],
         },
+        typography: (theme) => ({
+          DEFAULT: {
+            css: {
+              '--tw-prose-headings': theme('colors.neutral'),
+              '--tw-prose-links': theme('colors.primary'),
+              h2: {
+                color: theme('colors.primary'),
+              },
+              h3: {
+                color: theme('colors.neutral'),
+              },
+              a: {
+                color: theme('colors.primary'),
+                '&:hover': {
+                  color: theme('colors.primary / 80%'),
+                },
+              },
+              strong: {
+                color: theme('colors.neutral'),
+              },
+            },
+          },
+        }),
       },
     },
-    plugins: [require('daisyui')],
+    plugins: [
+      require('daisyui'),
+      require('@tailwindcss/typography'),
+    ],
     daisyui: {
       themes: [
         {
@@ -45,4 +71,3 @@ export default {
       darkTheme: false,
     },
   }
-  

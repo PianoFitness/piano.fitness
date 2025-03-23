@@ -2,6 +2,7 @@
 const gitHubUrl = 'https://github.com/brylie/piano-fitness-app';
 const gitHubIssuesUrl = `${gitHubUrl}/issues`;
 const gitHubLicenseUrl = `${gitHubUrl}/blob/main/LICENSE`;
+const baseUrl = import.meta.env.BASE_URL || "/";
 ---
 
 <footer class="footer p-10 bg-neutral text-neutral-content">
@@ -9,7 +10,7 @@ const gitHubLicenseUrl = `${gitHubUrl}/blob/main/LICENSE`;
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
       <div class="space-y-4">
         <div class="flex items-center gap-4">
-          <img src="/PianoFitness.png" alt="Piano Fitness Logo" class="w-16 h-16 rounded-[20%] flex-shrink-0" />
+          <img src={baseUrl + "PianoFitness.png"} alt="Piano Fitness Logo" class="w-16 h-16 rounded-[20%] flex-shrink-0" />
           <p>Piano Fitness is designed as a supplementary tool focusing specifically on technical development, not to replace traditional piano instruction or repertoire practice software.</p>
         </div>
       </div> 
@@ -24,15 +25,15 @@ const gitHubLicenseUrl = `${gitHubUrl}/blob/main/LICENSE`;
       <div class="space-y-4">
         <span class="footer-title">Legal</span>
         <nav class="flex flex-col space-y-2">
-          <a href="/privacy" class="link link-hover">Privacy Policy</a>
-          <a href="/terms" class="link link-hover">Terms of Use</a>
+          <a href={baseUrl + "privacy"} class="link link-hover">Privacy Policy</a>
+          <a href={baseUrl + "terms"} class="link link-hover">Terms of Use</a>
         </nav>
       </div>
       <div class="space-y-4">
         <span class="footer-title">About</span>
         <nav class="flex flex-col space-y-2">
-          <a href="/mission" class="link link-hover">Our Mission</a> 
-          <a href="/team" class="link link-hover">Development Team</a>
+          <a href={baseUrl + "mission"} class="link link-hover">Our Mission</a> 
+          <a href={baseUrl + "team"} class="link link-hover">Development Team</a>
         </nav>
       </div>
     </div>

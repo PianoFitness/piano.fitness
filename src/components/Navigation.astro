@@ -1,12 +1,13 @@
 ---
 const gitHubUrl = 'https://github.com/brylie/piano-fitness-app';
+const baseUrl = import.meta.env.BASE_URL || "/";
 ---
 
 <div class="navbar bg-base-100 shadow-sm sticky top-0 z-50">
   <div class="container mx-auto">
     <div class="flex-1">
-      <a href="/" class="flex items-center">
-        <img src="/PianoFitness.png" alt="Piano Fitness Logo" class="h-8 w-8 mr-2 rounded-[20%]" />
+      <a href={baseUrl} class="flex items-center">
+        <img src={baseUrl + "PianoFitness.png"} alt="Piano Fitness Logo" class="h-8 w-8 mr-2 rounded-[20%]" />
         <span class="font-heading font-bold text-xl">Piano Fitness</span>
       </a>
     </div>
@@ -20,10 +21,10 @@ const gitHubUrl = 'https://github.com/brylie/piano-fitness-app';
           </svg>
         </label>
         <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-          <li><a href="/#features">Features</a></li>
-          <li><a href="/#why-piano-fitness">Why Piano Fitness</a></li>
-          <li><a href="/#how-we-help">How We Help</a></li>
-          <li><a href="/#status">Current Status</a></li>
+          <li><a href={baseUrl + "#features"}>Features</a></li>
+          <li><a href={baseUrl + "#why-piano-fitness"}>Why Piano Fitness</a></li>
+          <li><a href={baseUrl + "#how-we-help"}>How We Help</a></li>
+          <li><a href={baseUrl + "#status"}>Current Status</a></li>
           <li><a href={gitHubUrl}>GitHub</a></li>
         </ul>
       </div>
@@ -32,10 +33,10 @@ const gitHubUrl = 'https://github.com/brylie/piano-fitness-app';
     <!-- Desktop menu -->
     <div class="flex-none hidden lg:flex items-center gap-2">
       <ul class="menu menu-horizontal px-1">
-        <li><a href="/#features">Features</a></li>
-        <li><a href="/#why-piano-fitness">Why Piano Fitness</a></li>
-        <li><a href="/#how-we-help">How We Help</a></li>
-        <li><a href="/#status">Current Status</a></li>
+        <li><a href={baseUrl + "#features"}>Features</a></li>
+        <li><a href={baseUrl + "#why-piano-fitness"}>Why Piano Fitness</a></li>
+        <li><a href={baseUrl + "#how-we-help"}>How We Help</a></li>
+        <li><a href={baseUrl + "#status"}>Current Status</a></li>
       </ul>
       <a href={gitHubUrl} class="btn btn-ghost btn-sm">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">

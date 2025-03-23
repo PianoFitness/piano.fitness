@@ -57,7 +57,7 @@ const gitHubLicenseUrl = `${gitHubUrl}/blob/main/LICENSE`;
   </section>
 
   <!-- Problem-Solution Section -->
-  <section class="py-16 bg-base-200">
+  <section id="why-piano-fitness" class="py-16 bg-base-200">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold mb-4">How We Complement Your Piano Journey</h2>
@@ -98,8 +98,8 @@ const gitHubLicenseUrl = `${gitHubUrl}/blob/main/LICENSE`;
     </div>
   </section>
 
-  <!-- Available Features Section -->
-  <section class="py-16">
+  <!-- How We Help Section -->
+  <section id="how-we-help" class="py-16">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold mb-4">Available Features</h2>
@@ -183,7 +183,7 @@ const gitHubLicenseUrl = `${gitHubUrl}/blob/main/LICENSE`;
   </section>
 
   <!-- Status Section -->
-  <section class="py-16 bg-base-200">
+  <section id="status" class="py-16 bg-base-200">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold mb-4">Current Status</h2>
@@ -247,4 +247,50 @@ const gitHubLicenseUrl = `${gitHubUrl}/blob/main/LICENSE`;
       <a href={gitHubUrl} class="btn btn-outline btn-secondary">View Project on GitHub</a>
     </div>
   </section>
+
+  <!-- Back to top button -->
+  <button
+    id="back-to-top"
+    class="fixed bottom-4 right-4 btn btn-circle btn-primary"
+    aria-label="Back to top"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M5 10l7-7m0 0l7 7m-7-7v18"
+      />
+    </svg>
+  </button>
 </Layout>
+
+<script>
+  const backToTopButton = document.getElementById('back-to-top');
+  
+  // Show/hide button based on scroll position
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopButton?.classList.remove('hidden');
+    } else {
+      backToTopButton?.classList.add('hidden');
+    }
+  });
+
+  // Scroll to top when clicked
+  backToTopButton?.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  // Initially hide the button
+  backToTopButton?.classList.add('hidden');
+</script>

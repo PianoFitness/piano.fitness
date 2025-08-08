@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 }
 
 const { article } = Astro.props;
-const { Content } = await article.render();
+const { Content, remarkPluginFrontmatter } = await article.render();
 
 const {
   title,
@@ -56,6 +56,7 @@ const formattedDate = publishDate
         >
           {author && <span>By {author}</span>}
           {formattedDate && <span>Published {formattedDate}</span>}
+          {remarkPluginFrontmatter.minutesRead && <span>{remarkPluginFrontmatter.minutesRead}</span>}
         </div>
       </header>
 

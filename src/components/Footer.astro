@@ -1,5 +1,5 @@
 ---
-const gitHubUrl = 'https://github.com/brylie/piano-fitness-app';
+const gitHubUrl = "https://github.com/PianoFitness/app";
 const gitHubIssuesUrl = `${gitHubUrl}/issues`;
 const gitHubLicenseUrl = `${gitHubUrl}/blob/main/LICENSE`;
 const baseUrl = import.meta.env.BASE_URL || "/";
@@ -10,30 +10,41 @@ const baseUrl = import.meta.env.BASE_URL || "/";
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
       <div class="space-y-4">
         <div class="flex items-center gap-4">
-          <img src={baseUrl + "PianoFitness.png"} alt="Piano Fitness Logo" class="w-16 h-16 rounded-[20%] flex-shrink-0" />
-          <p>Piano Fitness is designed as a supplementary tool focusing specifically on technical development, not to replace traditional piano instruction or repertoire practice software.</p>
+          <img
+            src={baseUrl + "PianoFitness.png"}
+            alt="Piano Fitness Logo"
+            class="w-16 h-16 rounded-[20%] flex-shrink-0"
+          />
+          <p>
+            Piano Fitness is designed as a supplementary tool focusing
+            specifically on technical development, not to replace traditional
+            piano instruction or repertoire practice software.
+          </p>
         </div>
-      </div> 
+      </div>
       <div class="space-y-4">
-        <span class="footer-title">Resources</span> 
+        <span class="footer-title">Resources</span>
         <nav class="flex flex-col space-y-2">
-          <a href={gitHubUrl} class="link link-hover">GitHub Repository</a> 
-          <a href={gitHubIssuesUrl} class="link link-hover">Report Issues</a> 
+          <a href={gitHubUrl} class="link link-hover">GitHub Repository</a>
+          <a href={gitHubIssuesUrl} class="link link-hover">Report Issues</a>
           <a href={gitHubLicenseUrl} class="link link-hover">License</a>
         </nav>
-      </div> 
+      </div>
       <div class="space-y-4">
         <span class="footer-title">Legal</span>
         <nav class="flex flex-col space-y-2">
-          <a href={baseUrl + "privacy"} class="link link-hover">Privacy Policy</a>
+          <a href={baseUrl + "privacy"} class="link link-hover"
+            >Privacy Policy</a
+          >
           <a href={baseUrl + "terms"} class="link link-hover">Terms of Use</a>
         </nav>
       </div>
       <div class="space-y-4">
         <span class="footer-title">About</span>
         <nav class="flex flex-col space-y-2">
-          <a href={baseUrl + "mission"} class="link link-hover">Our Mission</a> 
-          <a href={baseUrl + "team"} class="link link-hover">Development Team</a>
+          <a href={baseUrl + "mission"} class="link link-hover">Our Mission</a>
+          <a href={baseUrl + "team"} class="link link-hover">Development Team</a
+          >
         </nav>
       </div>
     </div>
@@ -42,6 +53,12 @@ const baseUrl = import.meta.env.BASE_URL || "/";
 
 <footer class="footer footer-center p-4 bg-neutral text-neutral-content">
   <div>
-    <p>&copy; 2025 Piano Fitness. All rights reserved. Built with <a class="text-pink-500 hover:text-blue-700" href="https://godotengine.org">Godot Engine</a>.</p>
+    <p>
+      &copy; 2025 Piano Fitness. All rights reserved. Built with <a
+        class="text-pink-500 hover:text-blue-700"
+        href="https://flutter.dev/"
+        rel="noopener noreferrer">Flutter</a
+      >.
+    </p>
   </div>
 </footer>

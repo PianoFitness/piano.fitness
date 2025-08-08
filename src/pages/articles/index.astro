@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon/components';
 import Layout from '../../layouts/Layout.astro';
 
 // Get all articles, sorted by publish date (newest first)
@@ -26,6 +27,17 @@ const pageDescription = "Read the latest articles about piano technique, practic
       <p class="text-lg md:text-xl text-neutral-content/80 max-w-2xl mx-auto">
         {pageDescription}
       </p>
+      
+      <!-- RSS Feed Link -->
+      <div class="mt-6">
+        <a 
+          href="/rss.xml" 
+          class="inline-flex items-center gap-2 btn btn-outline btn-sm hover:btn-accent"
+        >
+          <Icon name="mdi:rss" size={16} class="text-accent" />
+          Subscribe to RSS
+        </a>
+      </div>
     </div>
 
     <!-- Tags Filter Section -->

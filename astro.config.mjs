@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import icon from 'astro-icon';
 
 import tailwindcss from '@tailwindcss/vite';
 import { remarkReadingTime } from './remark-reading-time.mjs';
@@ -8,6 +9,7 @@ import { remarkReadingTime } from './remark-reading-time.mjs';
 export default defineConfig({
   site: 'https://piano.fitness',
   base: '/',
+  integrations: [icon()],
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },

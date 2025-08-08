@@ -7,7 +7,9 @@ description: Meet the people behind Piano Fitness and learn about their vision a
 ## Brylie Christopher Oxley
 ### Founder & Primary Developer
 
-![Brylie Christopher Oxley](https://via.placeholder.com/150)
+
+<img src="https://avatars.githubusercontent.com/u/17307?v=4" alt="Brylie Christopher Oxley" class="w-48 rounded-lg shadow-lg float-left mr-6 mb-4"/>
+
 
 Brylie Christopher Oxley is the visionary behind Piano Fitness, bringing together his passion for music education with his expertise in software development to create a tool that addresses a specific gap in piano technical training.
 

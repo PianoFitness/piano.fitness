@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
 const gitHubUrl = 'https://github.com/brylie/piano-fitness-app';
 const gitHubIssuesUrl = `${gitHubUrl}/issues`;
@@ -8,6 +9,12 @@ const baseUrl = import.meta.env.BASE_URL || "/";
 
 const title = "Piano Fitness - Technical Development for Piano Students";
 const description = "Enhance your piano technique with interactive exercises and real-time feedback. Piano Fitness complements traditional piano lessons with focused technical development tools.";
+
+// Get recent articles for homepage
+const recentArticles = (await getCollection('articles'))
+  .filter(article => !article.data.draft)
+  .sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime())
+  .slice(0, 3);
 ---
 
 <Layout
@@ -245,6 +252,70 @@ const description = "Enhance your piano technique with interactive exercises and
       </div>
     </div>
   </section>
+
+  <!-- Recent Articles Section -->
+  {recentArticles.length > 0 && (
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Latest Articles</h2>
+          <p class="text-lg max-w-2xl mx-auto">Read our latest insights on piano technique, practice tips, and development updates</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {recentArticles.map((article) => {
+            const { title, description, publishDate, tags } = article.data;
+            const slug = article.data.slug || article.slug;
+            const formattedDate = new Date(publishDate).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric'
+            });
+
+            return (
+              <article class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+                <div class="card-body">
+                  <h3 class="card-title text-lg">
+                    <a 
+                      href={`${baseUrl}articles/${slug}`}
+                      class="text-primary hover:text-primary/80 transition-colors"
+                    >
+                      {title}
+                    </a>
+                  </h3>
+                  
+                  {description && (
+                    <p class="text-neutral-content/70 text-sm mb-3">
+                      {description}
+                    </p>
+                  )}
+                  
+                  <div class="flex flex-wrap items-center justify-between gap-2 mt-auto">
+                    <time class="text-xs text-neutral-content/60">{formattedDate}</time>
+                    {tags && tags.length > 0 && (
+                      <div class="flex flex-wrap gap-1">
+                        {tags.slice(0, 2).map((tag) => (
+                          <span class="badge badge-secondary badge-xs">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+        
+        <div class="text-center mt-8">
+          <a href={`${baseUrl}articles`} class="btn btn-outline">
+            View All Articles
+          </a>
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- CTA Section -->
   <section class="py-16 bg-primary text-primary-content">

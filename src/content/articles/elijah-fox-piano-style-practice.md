@@ -1,18 +1,18 @@
 ---
-title: "Unlock the Dreamy World of Elija Fox-Style Impressionist Piano"
+title: "Unlock the Dreamy World of Elijah Fox-Style Impressionist Piano"
 description: "Master lush extended chords, modal harmony, and flowing arpeggios to create dreamy impressionist piano textures. Complete with practice exercises and systematic learning approach."
 publishDate: 2025-08-08
 author: "Brylie Christopher Oxley"
 tags: ["impressionist piano", "chord progressions", "extended chords", "jazz harmony", "piano technique", "voicings", "arpeggios", "modal harmony", "practice methods"]
 ---
 
-# Unlock the Dreamy World of Elija Fox-Style Impressionist Piano
+# Unlock the Dreamy World of Elijah Fox-Style Impressionist Piano
 
-Ever wonder how modern pianists create those lush, floating sounds that seem to blur the lines between jazz, soul, and classical impressionism? Let's break down the harmonic secrets behind Elija Fox's signature style and give you the tools to create your own dreamy piano textures.
+Ever wonder how modern pianists create those lush, floating sounds that seem to blur the lines between jazz, soul, and classical impressionism? Let's break down the harmonic secrets behind Elijah Fox's signature style and give you the tools to create your own dreamy piano textures.
 
 ## 🎹 What Makes This Style Special?
 
-Elija Fox's approach combines the harmonic sophistication of modern jazz with the atmospheric qualities of impressionist composers like Debussy and Ravel. The result? Piano music that feels both grounded and ethereal, perfect for expressive improvisation and contemplative playing.
+Elijah Fox's approach combines the harmonic sophistication of modern jazz with the atmospheric qualities of impressionist composers like Debussy and Ravel. The result? Piano music that feels both grounded and ethereal, perfect for expressive improvisation and contemplative playing.
 
 **Key characteristics include:**
 - Rich extended chords (9ths, 11ths, 13ths)
@@ -102,22 +102,22 @@ Then shift this shape to different roots, maintaining the same intervals.
 
 To build these skills efficiently, structure your practice sessions like this:
 
-**5 minutes: Chord Accuracy**
+### 5 minutes: Chord Accuracy
 - Block chords only, focus on clean finger placement
 - Check that each note sounds clearly
 - Practice chord transitions slowly
 
-**5 minutes: Smooth Voice Leading** 
+### 5 minutes: Smooth Voice Leading
 - Connect chords at a comfortable tempo
 - Listen for seamless transitions
 - Identify and practice the tricky chord changes
 
-**5 minutes: Musical Expression**
+### 5 minutes: Musical Expression
 - Add sustain pedal
 - Vary your touch and timing
 - Focus on creating that dreamy, floating quality
 
-**5 minutes: Expansion**
+### 5 minutes: Expansion
 - Try a new key, or
 - Experiment with different inversions, or  
 - Add simple improvised elements

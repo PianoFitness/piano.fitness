@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Prose from "../../components/Prose.astro";
+import AppStoreLink from "../../components/AppStoreLink.astro";
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles");
@@ -146,6 +147,11 @@ const structuredData = {
         <Prose>
           <Content />
         </Prose>
+        
+        <!-- App Store CTA at the end of each article -->
+        <div class="mt-8 pt-6 border-t border-base-300">
+          <AppStoreLink ctaText="Try Piano Fitness" variant="card" />
+        </div>
       </div>
     </article>
   </div>

@@ -1,10 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import AppStoreLink from "../components/AppStoreLink.astro";
 import { getCollection } from "astro:content";
 
 const gitHubUrl = "https://github.com/brylie/piano-fitness-app";
 const gitHubIssuesUrl = `${gitHubUrl}/issues`;
 const gitHubLicenseUrl = `${gitHubUrl}/blob/main/LICENSE`;
+const appStoreUrl = "https://apps.apple.com/us/app/piano-fitness-app/id6749638346";
 const baseUrl = import.meta.env.BASE_URL || "/";
 
 const title = "Piano Fitness - Technical Development for Piano Students";
@@ -39,10 +41,10 @@ const recentArticles = (await getCollection("articles"))
         real-time feedback
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href={baseUrl + "#features"} class="btn btn-primary"
+        <AppStoreLink ctaText="Download Now" />
+        <a href={baseUrl + "#features"} class="btn btn-outline"
           >Explore Features</a
         >
-        <a href={gitHubUrl} class="btn btn-outline">View on GitHub</a>
       </div>
     </div>
   </section>
@@ -266,26 +268,27 @@ const recentArticles = (await getCollection("articles"))
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="card bg-base-100 shadow-xl">
           <div class="card-body">
-            <h3 class="card-title text-xl mb-4">Developer Preview</h3>
+            <h3 class="card-title text-xl mb-4">Now Available!</h3>
             <p class="mb-4">
-              Piano Fitness is currently in active development, with regular
-              releases adding new features and improvements. While not yet
-              available in app stores, you can:
+              Piano Fitness is now available on the App Store! Download it today and start improving your piano technique with interactive exercises and real-time feedback.
             </p>
-            <ul class="space-y-2">
-              <li class="flex items-start">
-                <span class="text-primary mr-2">📦</span>
-                <span>Download source code from GitHub</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-primary mr-2">💭</span>
-                <span>Provide feedback through issues</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-primary mr-2">💻</span>
-                <span>Contribute to development through pull requests</span>
-              </li>
-            </ul>
+            <div class="flex flex-col gap-4">
+              <AppStoreLink ctaText="Get Piano Fitness" variant="button" />
+              <div class="divider text-xs opacity-60">or</div>
+              <div class="space-y-2">
+                <p class="text-sm font-medium">Want to contribute?</p>
+                <ul class="space-y-1 text-sm">
+                  <li class="flex items-start">
+                    <span class="text-primary mr-2 text-xs">📦</span>
+                    <span>View source code on GitHub</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-primary mr-2 text-xs">💻</span>
+                    <span>Contribute through pull requests</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -393,17 +396,19 @@ const recentArticles = (await getCollection("articles"))
   <section class="py-16 bg-primary text-primary-content">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-4">
-        Join the Piano Fitness Development
+        Ready to Transform Your Piano Practice?
       </h2>
       <p class="text-xl mb-8 max-w-2xl mx-auto">
-        Be part of shaping the future of piano technical training by exploring
-        the project on GitHub.
+        Join thousands of pianists already improving their technique with Piano Fitness. Download the app and start your journey today.
       </p>
-      <a
-        href={gitHubUrl}
-        class="btn btn-accent text-gray hover:btn-accent-focus"
-        >View Project on GitHub</a
-      >
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <AppStoreLink ctaText="Download Piano Fitness" variant="button" />
+        <a
+          href={gitHubUrl}
+          class="btn btn-accent text-accent-content hover:btn-accent-focus"
+          >View on GitHub</a
+        >
+      </div>
     </div>
   </section>
 

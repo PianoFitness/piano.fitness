@@ -1,0 +1,69 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  ctaText?: string;
+  variant?: "button" | "card" | "minimal";
+  showIcon?: boolean;
+}
+
+const { 
+  ctaText = "Download on App Store", 
+  variant = "button",
+  showIcon = true 
+} = Astro.props;
+
+const appStoreUrl = "https://apps.apple.com/us/app/piano-fitness-app/id6749638346";
+---
+
+{variant === "button" && (
+  <a 
+    href={appStoreUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn btn-primary inline-flex items-center gap-2"
+  >
+    {showIcon && (
+      <Icon name="mdi:apple" size={20} class="flex-shrink-0" />
+    )}
+    {ctaText}
+  </a>
+)}
+
+{variant === "card" && (
+  <div class="card bg-gradient-to-r from-primary to-secondary text-primary-content shadow-xl">
+    <div class="card-body text-center">
+      <h3 class="card-title justify-center mb-2">
+        {showIcon && (
+          <Icon name="mdi:apple-ios" size={24} class="mr-2" />
+        )}
+        Ready to Practice?
+      </h3>
+      <p class="mb-4">Get Piano Fitness and start improving your technique today!</p>
+      <div class="card-actions justify-center">
+        <a 
+          href={appStoreUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-accent text-accent-content"
+        >
+          {ctaText}
+        </a>
+      </div>
+    </div>
+  </div>
+)}
+
+{variant === "minimal" && (
+  <a 
+    href={appStoreUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="link link-primary inline-flex items-center gap-1 hover:link-secondary transition-colors"
+  >
+    {showIcon && (
+      <Icon name="mdi:apple" size={16} class="flex-shrink-0" />
+    )}
+    {ctaText}
+  </a>
+)}

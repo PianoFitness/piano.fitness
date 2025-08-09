@@ -21,12 +21,13 @@ Unlike traditional piano learning methods that rely heavily on sheet music, Pian
 
 ## Getting Started
 
-Piano Fitness is currently in developer preview, which means we're actively working with the community to shape the future of the application. Here's how you can get involved:
+Piano Fitness is now available on the App Store! Here's how you can start improving your piano technique:
 
-1. **Try the App**: Download and test our current features
-2. **Join the Community**: Connect with other pianists and developers
-3. **Provide Feedback**: Help us understand what works and what needs improvement
-4. **Contribute**: Check out our GitHub repository to contribute code or suggestions
+1. **Download the App**: Get Piano Fitness from the App Store and start practicing
+2. **Connect Your MIDI Keyboard**: Use any compatible MIDI keyboard for real-time feedback
+3. **Start with Scales**: Begin with our comprehensive scale library to build technique
+4. **Track Your Progress**: Monitor your improvement with built-in analytics
+5. **Join the Community**: Connect with other pianists and contribute to our open-source development
 
 ## The Technology Behind Piano Fitness
 

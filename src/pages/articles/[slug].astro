@@ -62,9 +62,46 @@ const formattedDate = publishDate
 const isoDate = publishDate
   ? new Date(publishDate).toISOString().split("T")[0]
   : null;
+
+// Schema.org structured data
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description: description || title,
+  image: image,
+  author: author
+    ? {
+        "@type": "Person",
+        name: author,
+      }
+    : undefined,
+  publisher: {
+    "@type": "Organization",
+    name: "Piano Fitness",
+    logo: {
+      "@type": "ImageObject",
+      url: Astro.site
+        ? new URL("PianoFitness.png", Astro.site).toString()
+        : import.meta.env.BASE_URL + "PianoFitness.png",
+    },
+  },
+  datePublished: publishDate ? new Date(publishDate).toISOString() : undefined,
+  dateModified: publishDate ? new Date(publishDate).toISOString() : undefined,
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": Astro.url.toString(),
+  },
+};
 ---
 
 <Layout title={title} description={description} image={image} type="article">
+  <!-- Schema.org structured data -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(structuredData)}
+  />
+
   <div class="container mx-auto px-4 py-8 md:py-16 max-w-4xl">
     <article>
       <!-- Article Header -->
@@ -89,7 +126,9 @@ const isoDate = publishDate
           {author && <span>By {author}</span>}
           {
             formattedDate && isoDate && (
-              <time datetime={isoDate}>Published {formattedDate}</time>
+              <span>
+                Published <time datetime={isoDate}>{formattedDate}</time>
+              </span>
             )
           }
           {

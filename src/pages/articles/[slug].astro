@@ -29,12 +29,15 @@ export async function getStaticPaths() {
 const { article } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await article.render();
 
+const defaultImage = Astro.site
+  ? new URL("PianoFitness.png", Astro.site).toString()
+  : import.meta.env.BASE_URL + "PianoFitness.png";
 const {
   title,
   description,
   publishDate,
   author,
-  image = import.meta.env.BASE_URL + "PianoFitness.png",
+  image = defaultImage,
 } = article.data;
 
 // Format date for display (using UTC to avoid timezone issues in builds)

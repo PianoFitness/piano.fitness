@@ -8,7 +8,7 @@ tags: ["impressionist piano", "chord progressions", "extended chords", "jazz har
 
 # Unlock the Dreamy World of Elijah Fox-Style Impressionist Piano
 
-Ever wonder how modern pianists create those lush, floating sounds that seem to blur the lines between jazz, soul, and classical impressionism? Let's break down the harmonic secrets behind Elijah Fox's signature style and give you the tools to create your own dreamy piano textures.
+Ever wonder how modern pianists create those lush, floating sounds that seem to blur the lines between jazz, soul, and classical impressionism? Let's break down the harmonic secrets behind [Elijah Fox's](https://www.elijahfox.org/) signature style and give you the tools to create your own dreamy piano textures.
 
 ## 🎹 What Makes This Style Special?
 

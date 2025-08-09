@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 
 export async function GET(context) {
   const articles = await getCollection('articles');
-  
+
   return rss({
     title: 'Piano Fitness - Articles',
     description: 'Piano technique articles and practice tips from Piano Fitness',

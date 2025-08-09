@@ -1,28 +1,50 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import AppStoreLink from "../components/AppStoreLink.astro";
+import { getCollection } from "astro:content";
 
-const gitHubUrl = 'https://github.com/brylie/piano-fitness-app';
+const gitHubUrl = "https://github.com/brylie/piano-fitness-app";
 const gitHubIssuesUrl = `${gitHubUrl}/issues`;
 const gitHubLicenseUrl = `${gitHubUrl}/blob/main/LICENSE`;
+const appStoreUrl = "https://apps.apple.com/us/app/piano-fitness-app/id6749638346";
 const baseUrl = import.meta.env.BASE_URL || "/";
 
 const title = "Piano Fitness - Technical Development for Piano Students";
-const description = "Enhance your piano technique with interactive exercises and real-time feedback. Piano Fitness complements traditional piano lessons with focused technical development tools.";
+const description =
+  "Enhance your piano technique with interactive exercises and real-time feedback. Piano Fitness complements traditional piano lessons with focused technical development tools.";
+
+// Get recent articles for homepage
+const recentArticles = (await getCollection("articles"))
+  .filter((article) => !article.data.draft)
+  .sort(
+    (a, b) =>
+      new Date(b.data.publishDate).getTime() -
+      new Date(a.data.publishDate).getTime()
+  )
+  .slice(0, 3);
 ---
 
-<Layout
-  title={title}
-  description={description}
->
+<Layout title={title} description={description}>
   <!-- Hero Section -->
   <section class="hero bg-base-200 py-16 md:py-24">
     <div class="container mx-auto px-4 text-center">
-	<img src={baseUrl + "PianoFitness.png"} alt="Piano Fitness Logo" class="w-32 h-32 mx-auto mb-6 rounded-[20%] shadow-lg" />
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Develop Your Piano Technique with Interactive Guidance</h1>
-      <p class="text-xl mb-8 max-w-2xl mx-auto">Piano Fitness complements your piano lessons with focused exercises and real-time feedback</p>
+      <img
+        src={baseUrl + "PianoFitness.png"}
+        alt="Piano Fitness Logo"
+        class="w-32 h-32 mx-auto mb-6 rounded-[20%] shadow-lg"
+      />
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        Develop Your Piano Technique with Interactive Guidance
+      </h1>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Piano Fitness complements your piano lessons with focused exercises and
+        real-time feedback
+      </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href={baseUrl + "#features"} class="btn btn-primary">Explore Features</a>
-        <a href={gitHubUrl} class="btn btn-outline">View on GitHub</a>
+        <AppStoreLink ctaText="Download Now" />
+        <a href={baseUrl + "#features"} class="btn btn-outline"
+          >Explore Features</a
+        >
       </div>
     </div>
   </section>
@@ -32,31 +54,49 @@ const description = "Enhance your piano technique with interactive exercises and
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold mb-4">Why Piano Fitness?</h2>
-        <p class="text-lg max-w-2xl mx-auto">Our application focuses on technical development that enhances your learning experience</p>
+        <p class="text-lg max-w-2xl mx-auto">
+          Our application focuses on technical development that enhances your
+          learning experience
+        </p>
       </div>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+        <div
+          class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow"
+        >
           <div class="card-body items-center text-center">
             <div class="text-4xl mb-4">🎹</div>
             <h3 class="card-title text-xl mb-2">Interactive Interface</h3>
-            <p>Full 88-key visualization with MIDI support and real-time feedback for an immersive practice experience.</p>
+            <p>
+              Full 88-key visualization with MIDI support and real-time feedback
+              for an immersive practice experience.
+            </p>
           </div>
         </div>
-        
-        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+
+        <div
+          class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow"
+        >
           <div class="card-body items-center text-center">
             <div class="text-4xl mb-4">📚</div>
             <h3 class="card-title text-xl mb-2">Comprehensive Exercises</h3>
-            <p>Structured progression through scales, arpeggios, chord inversions, and diatonic sequences.</p>
+            <p>
+              Structured progression through scales, arpeggios, chord
+              inversions, and diatonic sequences.
+            </p>
           </div>
         </div>
-        
-        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+
+        <div
+          class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow"
+        >
           <div class="card-body items-center text-center">
             <div class="text-4xl mb-4">⏱️</div>
             <h3 class="card-title text-xl mb-2">Focused Practice</h3>
-            <p>Built-in metronome and visual finger numbering help develop proper technique and timing.</p>
+            <p>
+              Built-in metronome and visual finger numbering help develop proper
+              technique and timing.
+            </p>
           </div>
         </div>
       </div>
@@ -67,38 +107,58 @@ const description = "Enhance your piano technique with interactive exercises and
   <section id="why-piano-fitness" class="py-16 bg-base-200">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">How We Complement Your Piano Journey</h2>
-        <p class="text-lg max-w-2xl mx-auto">Piano Fitness fills important gaps in the piano learning process</p>
+        <h2 class="text-3xl font-bold mb-4">
+          How We Complement Your Piano Journey
+        </h2>
+        <p class="text-lg max-w-2xl mx-auto">
+          Piano Fitness fills important gaps in the piano learning process
+        </p>
       </div>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="card bg-base-100 shadow-xl">
           <div class="card-body">
             <h3 class="card-title text-xl">Interactive Practice</h3>
             <p class="font-medium">Problem:</p>
-            <p class="mb-4">Traditional sheet music piano exercises aren't interactive.</p>
+            <p class="mb-4">
+              Traditional sheet music piano exercises aren't interactive.
+            </p>
             <p class="font-medium">Solution:</p>
-            <p>Our product waits for student input via MIDI, providing immediate feedback and guided corrections.</p>
+            <p>
+              Our product waits for student input via MIDI, providing immediate
+              feedback and guided corrections.
+            </p>
           </div>
         </div>
-        
+
         <div class="card bg-base-100 shadow-xl">
           <div class="card-body">
             <h3 class="card-title text-xl">Visual Learning</h3>
             <p class="font-medium">Problem:</p>
-            <p class="mb-4">Sheet music may be too abstract or difficult to read for some students.</p>
+            <p class="mb-4">
+              Sheet music may be too abstract or difficult to read for some
+              students.
+            </p>
             <p class="font-medium">Solution:</p>
-            <p>Our product shows an overview of the piano, so students don't need to do any mental mapping of abstract musical notation to the keys.</p>
+            <p>
+              Our product shows an overview of the piano, so students don't need
+              to do any mental mapping of abstract musical notation to the keys.
+            </p>
           </div>
         </div>
-        
+
         <div class="card bg-base-100 shadow-xl">
           <div class="card-body">
             <h3 class="card-title text-xl">Technical Focus</h3>
             <p class="font-medium">Problem:</p>
-            <p class="mb-4">Many apps focus on repertoire but neglect technical development.</p>
+            <p class="mb-4">
+              Many apps focus on repertoire but neglect technical development.
+            </p>
             <p class="font-medium">Solution:</p>
-            <p>Piano Fitness specializes in technical exercises that build the foundation for playing any piece.</p>
+            <p>
+              Piano Fitness specializes in technical exercises that build the
+              foundation for playing any piece.
+            </p>
           </div>
         </div>
       </div>
@@ -110,13 +170,17 @@ const description = "Enhance your piano technique with interactive exercises and
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold mb-4">Available Features</h2>
-        <p class="text-lg max-w-2xl mx-auto">Explore the current capabilities of Piano Fitness</p>
+        <p class="text-lg max-w-2xl mx-auto">
+          Explore the current capabilities of Piano Fitness
+        </p>
       </div>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="card bg-base-100 shadow-xl">
           <div class="card-body">
-            <h3 class="card-title text-xl mb-4 justify-center">Exercise Library</h3>
+            <h3 class="card-title text-xl mb-4 justify-center">
+              Exercise Library
+            </h3>
             <ul class="space-y-2">
               <li class="flex items-start">
                 <span class="text-success mr-2">•</span>
@@ -137,10 +201,12 @@ const description = "Enhance your piano technique with interactive exercises and
             </ul>
           </div>
         </div>
-        
+
         <div class="card bg-base-100 shadow-xl">
           <div class="card-body">
-            <h3 class="card-title text-xl mb-4 justify-center">Practice Tools</h3>
+            <h3 class="card-title text-xl mb-4 justify-center">
+              Practice Tools
+            </h3>
             <ul class="space-y-2">
               <li class="flex items-start">
                 <span class="text-success mr-2">•</span>
@@ -161,7 +227,7 @@ const description = "Enhance your piano technique with interactive exercises and
             </ul>
           </div>
         </div>
-        
+
         <div class="card bg-base-100 shadow-xl">
           <div class="card-body">
             <h3 class="card-title text-xl mb-4 justify-center">Coming Soon</h3>
@@ -194,31 +260,38 @@ const description = "Enhance your piano technique with interactive exercises and
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold mb-4">Current Status</h2>
-        <p class="text-lg max-w-2xl mx-auto">Piano Fitness is actively being developed with regular updates</p>
+        <p class="text-lg max-w-2xl mx-auto">
+          Piano Fitness is actively being developed with regular updates
+        </p>
       </div>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="card bg-base-100 shadow-xl">
           <div class="card-body">
-            <h3 class="card-title text-xl mb-4">Developer Preview</h3>
-            <p class="mb-4">Piano Fitness is currently in active development, with regular releases adding new features and improvements. While not yet available in app stores, you can:</p>
-            <ul class="space-y-2">
-              <li class="flex items-start">
-                <span class="text-primary mr-2">📦</span>
-                <span>Download source code from GitHub</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-primary mr-2">💭</span>
-                <span>Provide feedback through issues</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-primary mr-2">💻</span>
-                <span>Contribute to development through pull requests</span>
-              </li>
-            </ul>
+            <h3 class="card-title text-xl mb-4">Now Available!</h3>
+            <p class="mb-4">
+              Piano Fitness is now available on the App Store! Download it today and start improving your piano technique with interactive exercises and real-time feedback.
+            </p>
+            <div class="flex flex-col gap-4">
+              <AppStoreLink ctaText="Get Piano Fitness" variant="button" />
+              <div class="divider text-xs opacity-60">or</div>
+              <div class="space-y-2">
+                <p class="text-sm font-medium">Want to contribute?</p>
+                <ul class="space-y-1 text-sm">
+                  <li class="flex items-start">
+                    <span class="text-primary mr-2 text-xs">📦</span>
+                    <span>View source code on GitHub</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-primary mr-2 text-xs">💻</span>
+                    <span>Contribute through pull requests</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-        
+
         <div class="card bg-base-100 shadow-xl">
           <div class="card-body">
             <h3 class="card-title text-xl mb-4">Technical Requirements</h3>
@@ -233,7 +306,9 @@ const description = "Enhance your piano technique with interactive exercises and
               </li>
               <li class="flex items-start">
                 <span class="text-primary mr-2">•</span>
-                <span>MIDI connectivity support (USB, Bluetooth, or USB OTG)</span>
+                <span
+                  >MIDI connectivity support (USB, Bluetooth, or USB OTG)</span
+                >
               </li>
               <li class="flex items-start">
                 <span class="text-primary mr-2">•</span>
@@ -246,12 +321,94 @@ const description = "Enhance your piano technique with interactive exercises and
     </div>
   </section>
 
+  <!-- Recent Articles Section -->
+  {
+    recentArticles.length > 0 && (
+      <section class="py-16">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Latest Articles</h2>
+            <p class="text-lg max-w-2xl mx-auto">
+              Read our latest insights on piano technique, practice tips, and
+              development updates
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {recentArticles.map((article) => {
+              const { title, description, publishDate, tags } = article.data;
+              const slug = article.slug;
+              const formattedDate = publishDate.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              });
+
+              return (
+                <article class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+                  <div class="card-body">
+                    <h3 class="card-title text-lg">
+                      <a
+                        href={`${baseUrl}articles/${slug}`}
+                        class="text-primary hover:text-primary/80 transition-colors"
+                      >
+                        {title}
+                      </a>
+                    </h3>
+
+                    {description && (
+                      <p class="text-neutral-content/70 text-sm mb-3">
+                        {description}
+                      </p>
+                    )}
+
+                    <div class="flex flex-wrap items-center justify-between gap-2 mt-auto">
+                      <time class="text-xs text-neutral-content/60">
+                        {formattedDate}
+                      </time>
+                      {tags && tags.length > 0 && (
+                        <div class="flex flex-wrap gap-1">
+                          {tags.slice(0, 2).map((tag) => (
+                            <span class="badge badge-secondary badge-xs">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          <div class="text-center mt-8">
+            <a href={`${baseUrl}articles`} class="btn btn-outline">
+              View All Articles
+            </a>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   <!-- CTA Section -->
   <section class="py-16 bg-primary text-primary-content">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4">Join the Piano Fitness Development</h2>
-      <p class="text-xl mb-8 max-w-2xl mx-auto">Be part of shaping the future of piano technical training by exploring the project on GitHub.</p>
-      <a href={gitHubUrl} class="btn btn-accent text-gray hover:btn-accent-focus">View Project on GitHub</a>
+      <h2 class="text-3xl font-bold mb-4">
+        Ready to Transform Your Piano Practice?
+      </h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Join thousands of pianists already improving their technique with Piano Fitness. Download the app and start your journey today.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <AppStoreLink ctaText="Download Piano Fitness" variant="button" />
+        <a
+          href={gitHubUrl}
+          class="btn btn-accent text-accent-content hover:btn-accent-focus"
+          >View on GitHub</a
+        >
+      </div>
     </div>
   </section>
 
@@ -272,32 +429,31 @@ const description = "Enhance your piano technique with interactive exercises and
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="2"
-        d="M5 10l7-7m0 0l7 7m-7-7v18"
-      />
+        d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
     </svg>
   </button>
 </Layout>
 
 <script>
-  const backToTopButton = document.getElementById('back-to-top');
-  
+  const backToTopButton = document.getElementById("back-to-top");
+
   // Show/hide button based on scroll position
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
-      backToTopButton?.classList.remove('hidden');
+      backToTopButton?.classList.remove("hidden");
     } else {
-      backToTopButton?.classList.add('hidden');
+      backToTopButton?.classList.add("hidden");
     }
   });
 
   // Scroll to top when clicked
-  backToTopButton?.addEventListener('click', () => {
+  backToTopButton?.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   });
 
   // Initially hide the button
-  backToTopButton?.classList.add('hidden');
+  backToTopButton?.classList.add("hidden");
 </script>

@@ -2,6 +2,7 @@
 // src/layouts/MarkdownLayout.astro
 import Layout from './Layout.astro';
 import Prose from '../components/Prose.astro';
+import AppStoreLink from '../components/AppStoreLink.astro';
 
 const { frontmatter } = Astro.props;
 const {
@@ -30,6 +31,11 @@ const {
       <Prose>
         <slot />
       </Prose>
+      
+      <!-- App Store CTA at the end of each article -->
+      <div class="mt-8 pt-6 border-t border-base-300">
+        <AppStoreLink ctaText="Try Piano Fitness" variant="card" />
+      </div>
     </div>
   </div>
 </Layout>

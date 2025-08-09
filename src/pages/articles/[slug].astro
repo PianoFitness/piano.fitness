@@ -1,0 +1,165 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Prose from "../../components/Prose.astro";
+import AppStoreLink from "../../components/AppStoreLink.astro";
+
+export async function getStaticPaths() {
+  const articles = await getCollection("articles");
+  const now = new Date();
+
+  // Filter out drafts and future-dated posts
+  const publishedArticles = articles.filter((article) => {
+    const { draft, publishDate } = article.data;
+
+    // Skip if marked as draft
+    if (draft) return false;
+
+    // Skip if publish date is in the future
+    if (publishDate && new Date(publishDate) > now) return false;
+
+    return true;
+  });
+
+  return publishedArticles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content, remarkPluginFrontmatter } = await article.render();
+
+const defaultImage = Astro.site
+  ? new URL("PianoFitness.png", Astro.site).toString()
+  : import.meta.env.BASE_URL + "PianoFitness.png";
+const {
+  title,
+  description,
+  publishDate,
+  author,
+  image: rawImage,
+} = article.data;
+
+// Convert relative image URLs to absolute URLs for social media metadata
+const image = rawImage
+  ? rawImage.startsWith("/") && Astro.site
+    ? new URL(rawImage.substring(1), Astro.site).toString()
+    : rawImage
+  : defaultImage;
+
+// Format date for display (using UTC to avoid timezone issues in builds)
+const formattedDate = publishDate
+  ? (() => {
+      const date = new Date(publishDate);
+      const utcDate = new Date(
+        date.getUTCFullYear(),
+        date.getUTCMonth(),
+        date.getUTCDate()
+      );
+      return utcDate.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        timeZone: "UTC",
+      });
+    })()
+  : null;
+
+// ISO 8601 date string for <time> element
+const isoDate = publishDate
+  ? new Date(publishDate).toISOString().split("T")[0]
+  : null;
+
+// Schema.org structured data
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description: description || title,
+  image: image,
+  author: author
+    ? {
+        "@type": "Person",
+        name: author,
+      }
+    : undefined,
+  publisher: {
+    "@type": "Organization",
+    name: "Piano Fitness",
+    logo: {
+      "@type": "ImageObject",
+      url: Astro.site
+        ? new URL("PianoFitness.png", Astro.site).toString()
+        : import.meta.env.BASE_URL + "PianoFitness.png",
+    },
+  },
+  datePublished: publishDate ? new Date(publishDate).toISOString() : undefined,
+  dateModified: publishDate ? new Date(publishDate).toISOString() : undefined,
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": Astro.url.toString(),
+  },
+};
+---
+
+<Layout title={title} description={description} image={image} type="article">
+  <!-- Schema.org structured data -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(structuredData)}
+  />
+
+  <div class="container mx-auto px-4 py-8 md:py-16 max-w-4xl">
+    <article>
+      <!-- Article Header -->
+      <header class="mb-8">
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-primary"
+        >
+          {title}
+        </h1>
+
+        {
+          description && (
+            <p class="text-lg md:text-xl text-neutral-content/80 mb-4">
+              {description}
+            </p>
+          )
+        }
+
+        <div
+          class="flex flex-wrap items-center gap-4 text-sm text-neutral-content/70"
+        >
+          {author && <span>By {author}</span>}
+          {
+            formattedDate && isoDate && (
+              <span>
+                Published <time datetime={isoDate}>{formattedDate}</time>
+              </span>
+            )
+          }
+          {
+            remarkPluginFrontmatter.minutesRead && (
+              <span>{remarkPluginFrontmatter.minutesRead}</span>
+            )
+          }
+        </div>
+      </header>
+
+      <!-- Article Content -->
+      <div
+        class="bg-base-100 dark:bg-neutral-900 p-6 md:p-8 rounded-lg shadow-md"
+      >
+        <Prose>
+          <Content />
+        </Prose>
+
+        <!-- App Store CTA at the end of each article -->
+        <div class="mt-8 pt-6 border-t border-base-300">
+          <AppStoreLink ctaText="Try Piano Fitness" variant="card" />
+        </div>
+      </div>
+    </article>
+  </div>
+</Layout>

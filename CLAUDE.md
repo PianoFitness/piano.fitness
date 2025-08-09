@@ -24,8 +24,14 @@ This is an Astro-based static site for Piano Fitness, a piano technique training
 
 **Component Structure**: 
 - `src/layouts/` - Page layouts (Layout.astro, MarkdownLayout.astro)
-- `src/components/` - Reusable components (Navigation, Footer, Prose)
+- `src/components/` - Reusable components (Navigation, Footer, Prose, AppStoreLink)
 - `src/pages/` - Route-based pages (index.astro, markdown pages)
+
+**Icons**: 
+- Use `astro-icon` package with `{ Icon }` import from 'astro-icon/components'
+- MDI (Material Design Icons) library is available - prefer `mdi:icon-name` format
+- Common icons: `mdi:apple` and `mdi:apple-ios` for App Store links
+- Avoid raw SVG code when MDI equivalent exists
 
 **Styling System**:
 - Custom brand color palette defined in tailwind.config.js

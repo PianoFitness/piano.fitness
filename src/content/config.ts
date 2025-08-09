@@ -7,9 +7,7 @@ const articles = defineCollection({
     description: z.string().optional(),
     publishDate: z.date(),
     author: z.string().optional(),
-    image: z
-      .string().url('expecting an absolute or relative URL')
-      .optional(),
+    image: z.string().optional(),
     tags: z.array(z.string()).optional(),
     draft: z.boolean().default(false),
   }),

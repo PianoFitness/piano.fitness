@@ -38,8 +38,15 @@ const {
   description,
   publishDate,
   author,
-  image = defaultImage,
+  image: rawImage,
 } = article.data;
+
+// Convert relative image URLs to absolute URLs for social media metadata
+const image = rawImage
+  ? rawImage.startsWith("/") && Astro.site
+    ? new URL(rawImage.substring(1), Astro.site).toString()
+    : rawImage
+  : defaultImage;
 
 // Format date for display (using UTC to avoid timezone issues in builds)
 const formattedDate = publishDate
@@ -147,7 +154,7 @@ const structuredData = {
         <Prose>
           <Content />
         </Prose>
-        
+
         <!-- App Store CTA at the end of each article -->
         <div class="mt-8 pt-6 border-t border-base-300">
           <AppStoreLink ctaText="Try Piano Fitness" variant="card" />

@@ -1,10 +1,11 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 
 const gitHubUrl = "https://github.com/PianoFitness/app";
 const gitHubIssuesUrl = `${gitHubUrl}/issues`;
 const gitHubLicenseUrl = `${gitHubUrl}/blob/main/LICENSE`;
-const appStoreUrl = "https://apps.apple.com/us/app/piano-fitness-app/id6749638346";
+const appStoreUrl =
+  "https://apps.apple.com/us/app/piano-fitness-app/id6749638346";
 const baseUrl = import.meta.env.BASE_URL || "/";
 ---
 
@@ -20,26 +21,49 @@ const baseUrl = import.meta.env.BASE_URL || "/";
           />
           <p>
             Piano Fitness is designed as a supplementary tool focusing
-            specifically on technical development, not to replace traditional
-            piano instruction or repertoire practice software.
+            specifically on technical development. It is the perfect complement
+            to traditional piano instruction and repertoire practice.
           </p>
         </div>
       </div>
       <div class="space-y-4">
         <span class="footer-title">Get the App</span>
         <nav class="flex flex-col space-y-2">
-          <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" class="link link-hover flex items-center gap-2 group">
-            <Icon name="mdi:apple" size={16} class="text-accent group-hover:text-accent-focus transition-colors" />
+          <a
+            href={appStoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link link-hover flex items-center gap-2 group"
+          >
+            <Icon
+              name="mdi:apple"
+              size={16}
+              class="text-accent group-hover:text-accent-focus transition-colors"
+            />
             Download on App Store
           </a>
+        </nav>
+
+        <span class="footer-title">About</span>
+        <nav class="flex flex-col space-y-2">
+          <a href={baseUrl + "mission"} class="link link-hover">Our Mission</a>
+          <a href={baseUrl + "team"} class="link link-hover">Development Team</a
+          >
         </nav>
       </div>
       <div class="space-y-4">
         <span class="footer-title">Resources</span>
         <nav class="flex flex-col space-y-2">
           <a href={baseUrl + "articles"} class="link link-hover">Articles</a>
-          <a href={baseUrl + "rss.xml"} class="link link-hover flex items-center gap-2 group">
-            <Icon name="mdi:rss" size={16} class="text-accent group-hover:text-accent-focus transition-colors" />
+          <a
+            href={baseUrl + "rss.xml"}
+            class="link link-hover flex items-center gap-2 group"
+          >
+            <Icon
+              name="mdi:rss"
+              size={16}
+              class="text-accent group-hover:text-accent-focus transition-colors"
+            />
             RSS Feed
           </a>
           <a href={gitHubUrl} class="link link-hover">GitHub Repository</a>
@@ -54,14 +78,6 @@ const baseUrl = import.meta.env.BASE_URL || "/";
             >Privacy Policy</a
           >
           <a href={baseUrl + "terms"} class="link link-hover">Terms of Use</a>
-        </nav>
-      </div>
-      <div class="space-y-4">
-        <span class="footer-title">About</span>
-        <nav class="flex flex-col space-y-2">
-          <a href={baseUrl + "mission"} class="link link-hover">Our Mission</a>
-          <a href={baseUrl + "team"} class="link link-hover">Development Team</a
-          >
         </nav>
       </div>
     </div>

@@ -5,12 +5,13 @@ const articles = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
-    slug: z.string().optional(),
     publishDate: z.date(),
     author: z.string().optional(),
-    image: z.string().optional(),
+    image: z
+      .string().url('expecting an absolute or relative URL')
+      .optional(),
     tags: z.array(z.string()).optional(),
-    draft: z.boolean().optional().default(false),
+    draft: z.boolean().default(false),
   }),
 });
 

@@ -1,7 +1,6 @@
 ---
 title: "Unlock the Dreamy World of Elija Fox-Style Impressionist Piano"
 description: "Master lush extended chords, modal harmony, and flowing arpeggios to create dreamy impressionist piano textures. Complete with practice exercises and systematic learning approach."
-slug: "elija-fox-impressionist-piano-style"
 publishDate: 2025-08-08
 author: "Brylie Christopher Oxley"
 tags: ["impressionist piano", "chord progressions", "extended chords", "jazz harmony", "piano technique", "voicings", "arpeggios", "modal harmony", "practice methods"]

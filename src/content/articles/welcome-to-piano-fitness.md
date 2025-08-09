@@ -1,7 +1,6 @@
 ---
 title: "Welcome to Piano Fitness"
 description: "Discover how Piano Fitness revolutionizes piano technique training with interactive MIDI-based exercises"
-slug: "welcome-to-piano-fitness"
 publishDate: 2025-08-08
 author: "Brylie Christopher Oxley"
 tags: ["introduction", "piano", "technique", "midi"]

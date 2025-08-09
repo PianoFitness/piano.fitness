@@ -60,7 +60,7 @@ const pageDescription = "Read the latest articles about piano technique, practic
     <div class="grid gap-8">
       {articles.map((article) => {
         const { title, description, publishDate, author, tags } = article.data;
-        const slug = article.data.slug || article.slug;
+        const slug = article.slug;
         const formattedDate = new Date(publishDate).toLocaleDateString('en-US', {
           year: 'numeric',
           month: 'long',

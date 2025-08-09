@@ -4,6 +4,7 @@ description: "Master lush extended chords, modal harmony, and flowing arpeggios 
 publishDate: 2025-08-08
 author: "Brylie Christopher Oxley"
 tags: ["impressionist piano", "chord progressions", "extended chords", "jazz harmony", "piano technique", "voicings", "arpeggios", "modal harmony", "practice methods"]
+image: "/PianoFitness.png"
 ---
 
 # Unlock the Dreamy World of Elijah Fox-Style Impressionist Piano

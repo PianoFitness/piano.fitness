@@ -4,6 +4,7 @@ description: "Discover how Piano Fitness revolutionizes piano technique training
 publishDate: 2025-08-08
 author: "Brylie Christopher Oxley"
 tags: ["introduction", "piano", "technique", "midi"]
+image: "/PianoFitness.png"
 ---
 
 # Welcome to Piano Fitness

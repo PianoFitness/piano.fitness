@@ -2,12 +2,13 @@
 import { getCollection } from 'astro:content';
 import { Icon } from 'astro-icon/components';
 import Layout from '../../layouts/Layout.astro';
+import { isPublishedArticle } from '../../utils/articles';
 
 const baseUrl = import.meta.env.BASE_URL || "/";
 
 // Get all articles, sorted by publish date (newest first)
 const articles = (await getCollection('articles'))
-  .filter(article => !article.data.draft)
+  .filter(isPublishedArticle)
   .sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
 
 // Get all unique tags for filtering

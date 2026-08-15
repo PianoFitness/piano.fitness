@@ -1,5 +1,6 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
+import { isPublishedArticle } from '../utils/articles';
 
 export async function GET(context) {
   const articles = await getCollection('articles');
@@ -10,6 +11,7 @@ export async function GET(context) {
     site: context.site,
     stylesheet: '/rss-style.xsl',
     items: articles
+      .filter(isPublishedArticle)
       .sort((a, b) => new Date(b.data.publishDate) - new Date(a.data.publishDate))
       .map((article) => ({
         title: article.data.title,

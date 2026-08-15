@@ -2,23 +2,11 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Prose from "../../components/Prose.astro";
+import { isPublishedArticle } from "../../utils/articles";
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles");
-  const now = new Date();
-
-  // Filter out drafts and future-dated posts
-  const publishedArticles = articles.filter((article) => {
-    const { draft, publishDate } = article.data;
-
-    // Skip if marked as draft
-    if (draft) return false;
-
-    // Skip if publish date is in the future
-    if (publishDate && new Date(publishDate) > now) return false;
-
-    return true;
-  });
+  const publishedArticles = articles.filter(isPublishedArticle);
 
   return publishedArticles.map((article) => ({
     params: { slug: article.slug },

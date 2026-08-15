@@ -1,6 +1,6 @@
 ---
 title: "Welcome to Piano Fitness"
-description: "Discover how Piano Fitness revolutionizes piano technique training with interactive MIDI-based exercises"
+description: "An introduction to Piano Fitness: open-source, MIDI-aware practice for piano technique and foundational harmony"
 publishDate: 2025-08-08
 author: "Brylie Christopher Oxley"
 tags: ["introduction", "piano", "technique", "midi"]
@@ -9,38 +9,34 @@ image: "/PianoFitness.png"
 
 # Welcome to Piano Fitness
 
-Piano Fitness is transforming how pianists develop their technique through innovative, interactive training tools. Our application provides a fresh approach to piano practice that complements traditional lessons with engaging, technology-driven exercises.
+Piano Fitness is an open-source practice app for pianists who want to make
+technical patterns and foundational harmony more concrete at the keyboard. It
+is designed to complement lessons, repertoire practice, and self-directed
+study—not to replace a teacher.
 
-## What Makes Piano Fitness Different?
+## What it supports
 
-Unlike traditional piano learning methods that rely heavily on sheet music, Piano Fitness focuses on:
+Piano Fitness brings together focused exercises for scales, arpeggios, chords,
+progressions, and cadences. With a MIDI keyboard connected, the app can show
+the expected notes and provide feedback on completed exercises, including
+accuracy and measured tempo.
 
-- **Visual Learning**: Perfect for students who struggle with traditional notation
-- **Interactive MIDI Integration**: Real-time feedback using your digital piano or keyboard
-- **Technique-Focused Training**: Targeted exercises for finger strength, dexterity, and coordination
-- **Progress Tracking**: Monitor your improvement over time with detailed analytics
+The app also includes a visual piano, a metronome, local practice history, and
+profiles. These tools are intended to help you choose a small practice focus,
+observe what happened, and decide what to revisit next.
 
-## Getting Started
+## What it does not claim to do
 
-Piano Fitness is now available on the App Store! Here's how you can start improving your piano technique:
+Piano Fitness does not assess hand posture or replace the musical judgment of a
+teacher. Its feedback is based on the musical input it receives, so use it as a
+practice companion alongside careful listening, good instruction, and your own
+musical goals.
 
-1. **Download the App**: Get Piano Fitness from the App Store and start practicing
-2. **Connect Your MIDI Keyboard**: Use any compatible MIDI keyboard for real-time feedback
-3. **Start with Scales**: Begin with our comprehensive scale library to build technique
-4. **Track Your Progress**: Monitor your improvement with built-in analytics
-5. **Join the Community**: Connect with other pianists and contribute to our open-source development
+## Follow the project
 
-## The Technology Behind Piano Fitness
+The next public iPad release is currently being prepared. Until then, you can
+follow development, inspect the source code, or contribute through the
+[Piano Fitness GitHub repository](https://github.com/PianoFitness/app).
 
-Our platform leverages modern web technologies to create seamless, responsive piano training experiences:
-
-- **Flutter Framework**: Cross-platform compatibility for web, mobile, and desktop
-- **MIDI Integration**: Direct communication with digital pianos and keyboards
-- **Real-time Analytics**: Instant feedback on your playing technique
-- **Adaptive Learning**: Exercises that adjust to your skill level and progress
-
-## Looking Forward
-
-We're excited about the future of piano education and believe that technology can enhance—not replace—the human elements of musical learning. Piano Fitness is designed to work alongside traditional instruction, providing additional tools and insights that help pianists reach their full potential.
-
-Stay tuned for updates as we continue developing new features and expanding our exercise library. Your journey to improved piano technique starts here!
+We are building the project in public because useful practice tools benefit
+from input from learners, teachers, musicians, and developers.

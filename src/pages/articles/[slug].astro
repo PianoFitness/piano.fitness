@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Prose from "../../components/Prose.astro";
-import AppStoreLink from "../../components/AppStoreLink.astro";
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles");
@@ -29,6 +28,7 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await article.render();
+const gitHubUrl = "https://github.com/PianoFitness/app";
 
 const defaultImage = Astro.site
   ? new URL("PianoFitness.png", Astro.site).toString()
@@ -155,9 +155,9 @@ const structuredData = {
           <Content />
         </Prose>
 
-        <!-- App Store CTA at the end of each article -->
         <div class="mt-8 pt-6 border-t border-base-300">
-          <AppStoreLink ctaText="Try Piano Fitness" variant="card" />
+          <p class="mb-3">Piano Fitness is developed in public.</p>
+          <a href={gitHubUrl} class="btn btn-primary">Follow the project on GitHub</a>
         </div>
       </div>
     </article>

@@ -1,59 +1,69 @@
 ---
 layout: ../layouts/MarkdownLayout.astro
 title: Our Mission | Piano Fitness
-description: The vision and purpose behind Piano Fitness - empowering piano students through technology
+description: The vision and purpose behind Piano Fitness—open, structured tools for piano practice
 ---
 
-## Bridging the Gap in Piano Education
+## Bridging a gap in piano practice
 
-Piano Fitness was born from a simple observation: while there are many excellent resources for learning piano repertoire, there's a significant gap when it comes to developing technical proficiency in a structured, interactive way. Traditional piano technique books provide valuable exercises, but they lack immediate feedback and adaptive learning capabilities that modern technology can offer.
+Piano Fitness began with a simple observation: there are many excellent
+resources for learning repertoire, but fewer tools that make technical practice
+visible, structured, and easier to continue. Traditional technique books remain
+valuable; Piano Fitness adds an interactive way to work through musical
+patterns at the keyboard.
 
-We believe that technical development is the foundation upon which musical expression is built. Just as physical fitness enables athletes to perform at their best, "piano fitness" enables musicians to express themselves freely without technical limitations.
+We believe technical fluency supports musical expression. The aim is not to
+reduce music to a score, but to give learners clear, useful evidence as they
+develop familiar patterns under their hands.
 
-## Our Core Purpose
+## Our purpose
 
-**We exist to empower individuals to develop their piano technique through technology that provides immediate feedback, structured progression, and consistent practice tools.**
+**We build open, evidence-informed tools that help people practise, understand,
+and teach musical skills.**
 
-Piano Fitness complements traditional piano education rather than replacing it. We envision our application working alongside private lessons, music schools, and self-directed learning to help students develop the technical foundation they need to express themselves musically.
+Piano Fitness complements traditional piano education rather than replacing it.
+It is intended to work alongside private lessons, music schools, and
+self-directed learning.
 
-## Our Values
+## Our values
 
-### Accessibility
+### Learner agency
 
-We believe piano education should be accessible to everyone. By creating an open source application that works with standard MIDI keyboards, we're removing barriers to quality technical instruction. Our goal is to make sophisticated piano technique development available regardless of geographical location or economic circumstances.
+Practice should support curiosity and independence. The app offers structure
+and feedback without turning practice into surveillance or punishment.
 
-### Technical Excellence
+### Accessibility and privacy
 
-We're committed to technical excellence in both our application development and the piano pedagogy we incorporate. The exercises and progression paths in Piano Fitness are designed based on established piano technique methodologies, digitized and enhanced with interactive elements to maximize learning efficiency.
+We want useful practice tools to remain accessible. Piano Fitness is
+open-source, works with standard MIDI keyboards, and keeps practice history on
+the device.
 
-### Community Collaboration
+### Educational integrity
 
-As an open source project, we believe in the power of community collaboration to create something greater than any individual could achieve alone. We welcome contributions from developers, piano educators, and enthusiasts who share our vision of democratizing piano technique education.
+The app can show expected notes and report results such as completion, accuracy,
+and tempo. It does not evaluate physical hand posture or replace a teacher's
+musical and technical judgment.
 
-### Growth Mindset
+### Community collaboration
 
-Piano technique development is a journey, not a destination. We embrace and encourage a growth mindset that celebrates progress rather than perfection. Piano Fitness is designed to help users track their improvement over time, acknowledging that consistent practice and incremental progress lead to remarkable results.
+We develop in public and welcome contributions from developers, piano
+educators, and enthusiasts who want to improve the project.
 
-## Our Approach
+## Our approach
 
-Piano Fitness addresses technical development through:
+Piano Fitness supports practice through:
 
-1. **Interactive Visualization**: Our 88-key interface provides visual feedback on hand position, fingering, and technique that static sheet music cannot offer.
+1. **Interactive visualisation**: A piano interface makes the notes and
+   patterns in each exercise visible.
+2. **MIDI-aware feedback**: With a connected MIDI keyboard, learners can work
+   through expected notes and review completed exercises.
+3. **Structured progression**: Exercises and curriculum paths offer a practical
+   route through technical and harmonic foundations.
+4. **Continuity tools**: A metronome, local practice history, and profiles make
+   it easier to return to focused work over time.
 
-2. **Immediate Feedback**: Through MIDI integration, students receive real-time feedback on their playing, allowing them to correct errors immediately rather than ingraining bad habits.
+## Join the project
 
-3. **Structured Progression**: Carefully designed exercise progression ensures students build skills incrementally, with each new challenge building upon previously mastered techniques.
-
-4. **Consistent Practice Tools**: Built-in metronome, finger numbering, and practice analytics help students develop the disciplined practice habits essential for technical growth.
-
-## Join Our Mission
-
-Whether you're a pianist looking to improve your technique, a teacher searching for supplementary tools for your students, or a developer passionate about music education, we invite you to join our mission.
-
-Together, we can create a tool that helps pianists worldwide develop the technical foundation they need to express their musical voice with freedom and confidence.
-
-Piano Fitness is more than an application—it's a movement toward making quality piano technique education accessible to everyone with the desire to learn.
-
----
-
-*"Technique is the servant of musical expression, but without it, the artist remains voiceless."*
+Whether you are a pianist, teacher, developer, or designer, you are welcome to
+follow and contribute to Piano Fitness. Together, we can make thoughtful piano
+practice tools more useful and more widely available.

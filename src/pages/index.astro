@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { isPublishedArticle } from "../utils/articles";
 
 const gitHubUrl = "https://github.com/PianoFitness/app";
 const baseUrl = import.meta.env.BASE_URL || "/";
@@ -10,7 +11,7 @@ const description =
   "An open-source, MIDI-aware piano practice app for making technical practice visible, structured, and easier to continue.";
 
 const recentArticles = (await getCollection("articles"))
-  .filter((article) => !article.data.draft)
+  .filter(isPublishedArticle)
   .sort(
     (a, b) =>
       new Date(b.data.publishDate).getTime() -

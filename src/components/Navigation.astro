@@ -2,7 +2,6 @@
 import { Icon } from 'astro-icon/components';
 
 const gitHubUrl = "https://github.com/PianoFitness/app";
-const appStoreUrl = "https://apps.apple.com/us/app/piano-fitness-app/id6749638346";
 const baseUrl = import.meta.env.BASE_URL || "/";
 ---
 
@@ -10,65 +9,34 @@ const baseUrl = import.meta.env.BASE_URL || "/";
   <div class="container mx-auto">
     <div class="flex-1">
       <a href={baseUrl} class="flex items-center">
-        <img
-          src={baseUrl + "PianoFitness.png"}
-          alt="Piano Fitness Logo"
-          class="h-8 w-8 mr-2 rounded-[20%]"
-        />
+        <img src={baseUrl + "PianoFitness.png"} alt="Piano Fitness logo" class="h-8 w-8 mr-2 rounded-[20%]" />
         <span class="font-heading font-bold text-xl">Piano Fitness</span>
       </a>
     </div>
 
-    <!-- Mobile menu -->
     <div class="flex-none lg:hidden">
       <div class="dropdown dropdown-start">
-        <label tabindex="0" class="btn btn-ghost">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h8m-8 6h16"></path>
-          </svg>
+        <label tabindex="0" class="btn btn-ghost" aria-label="Open navigation menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
         </label>
-        <ul
-          tabindex="0"
-          class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-        >
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
           <li><a href={baseUrl + "#features"}>Features</a></li>
-          <li>
-            <a href={baseUrl + "#why-piano-fitness"}>Why Piano Fitness</a>
-          </li>
-          <li><a href={baseUrl + "#how-we-help"}>How We Help</a></li>
+          <li><a href={baseUrl + "#how-it-works"}>How it works</a></li>
+          <li><a href={baseUrl + "#status"}>Release status</a></li>
           <li><a href={baseUrl + "articles"}>Articles</a></li>
-          <li><a href={appStoreUrl} target="_blank" rel="noopener noreferrer">Download App</a></li>
           <li><a href={gitHubUrl}>GitHub</a></li>
         </ul>
       </div>
     </div>
 
-    <!-- Desktop menu -->
     <div class="flex-none hidden lg:flex items-center gap-2">
       <ul class="menu menu-horizontal px-1">
         <li><a href={baseUrl + "#features"}>Features</a></li>
-        <li><a href={baseUrl + "#why-piano-fitness"}>Why Piano Fitness</a></li>
-        <li><a href={baseUrl + "#how-we-help"}>How We Help</a></li>
+        <li><a href={baseUrl + "#how-it-works"}>How it works</a></li>
+        <li><a href={baseUrl + "#status"}>Release status</a></li>
         <li><a href={baseUrl + "articles"}>Articles</a></li>
       </ul>
-      <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-        <Icon name="mdi:apple" size={16} />
-        Download App
-      </a>
-      <a href={gitHubUrl} class="btn btn-ghost btn-sm">
-        <Icon name="mdi:github" size={20} />
-        GitHub
-      </a>
+      <a href={gitHubUrl} class="btn btn-primary btn-sm"><Icon name="mdi:github" size={18} />Follow on GitHub</a>
     </div>
   </div>
 </div>
